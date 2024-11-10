@@ -1,10 +1,16 @@
 # BookKeepers
 
 # Description
+This project aims to develop a responsive and intuitive Library Management System designed to streamline the user experience for students. The system will feature a modern, user-centric interface that adapts seamlessly across devices, ensuring ease of use on desktops, tablets, and mobile devices.
+
+Key functionalities include an advanced search and filter system, allowing users to efficiently search for books and ebooks by title, author, genre, or format, with the option to apply specific filters for faster, more relevant results. Additionally, the system will feature a personalized user dashboard, where students can easily track their borrowed books, due dates, and reading history, fostering a more organized and engaging library experience.
+
+By addressing the existing pain points of a non-user-friendly interface and complex book search process, this project will significantly enhance accessibility and usability, making library management effortless and efficient for students.
 
 # Project Members
-**Jhovynn Aldrich Apurado*
-
+** Jhovynn Aldrich Apurado*
+** Nap Adriel Derecho*
+** Willian Bustamante*
 
 # Links
 - **Figma UI/UX**: [Figma Design]
