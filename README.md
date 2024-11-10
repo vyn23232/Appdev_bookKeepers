@@ -14,7 +14,7 @@ By addressing the existing pain points of a non-user-friendly interface and comp
 
 # Links
 - **Figma UI/UX**: [Figma Design]
-- **Entity Relationship Diagram (ERD)**: [View ERD]
+- **Entity Relationship Diagram (ERD)**: [file:///C:/Users/JHOVYNN/Downloads/ApuradoDerechoBustamante.pdf]
 - **Gantt Chart**: [View Gantt Chart]
 
 # Key Features
