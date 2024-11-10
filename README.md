@@ -13,9 +13,9 @@ By addressing the existing pain points of a non-user-friendly interface and comp
 3. Willian Bustamante
 
 # Links
-- **Figma UI/UX**: [Figma Design]
-- **Entity Relationship Diagram (ERD)**: 
-- **Gantt Chart**: ![image](https://github.com/user-attachments/assets/d56ddbc1-1994-4af9-8547-c7d5df0582c8)
+ ![image](https://github.com/user-attachments/assets/d56ddbc1-1994-4af9-8547-c7d5df0582c8)
+ ![image](https://github.com/user-attachments/assets/3fe55b4c-42b2-4376-bf59-48348ed12269)
+
 
 
 # Key Features
