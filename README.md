@@ -14,8 +14,9 @@ By addressing the existing pain points of a non-user-friendly interface and comp
 
 # Links
 - **Figma UI/UX**: [Figma Design]
-- **Entity Relationship Diagram (ERD)**: []
-- **Gantt Chart**: [View Gantt Chart]
+- **Entity Relationship Diagram (ERD)**: 
+- **Gantt Chart**: ![image](https://github.com/user-attachments/assets/d56ddbc1-1994-4af9-8547-c7d5df0582c8)
+
 
 # Key Features
 
