@@ -2,6 +2,9 @@
 
 # Description
 
+# Project Members
+**Jhovynn Aldrich Apurado*
+
 
 # Links
 - **Figma UI/UX**: [Figma Design]
