@@ -8,9 +8,9 @@ Key functionalities include an advanced search and filter system, allowing users
 By addressing the existing pain points of a non-user-friendly interface and complex book search process, this project will significantly enhance accessibility and usability, making library management effortless and efficient for students.
 
 # Project Members
-** Jhovynn Aldrich Apurado*
-** Nap Adriel Derecho*
-** Willian Bustamante*
+1. Jhovynn Aldrich Apurado
+2. Nap Adriel Derecho
+3. Willian Bustamante
 
 # Links
 - **Figma UI/UX**: [Figma Design]
