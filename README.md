@@ -12,13 +12,7 @@ By addressing the existing pain points of a non-user-friendly interface and comp
 2. Nap Adriel Derecho
 3. Willian Bustamante
 
-# Links
+# ERD
  ![image](https://github.com/user-attachments/assets/d56ddbc1-1994-4af9-8547-c7d5df0582c8)
  ![image](https://github.com/user-attachments/assets/3fe55b4c-42b2-4376-bf59-48348ed12269)
-
-
-
-# Key Features
-
-
-# Technologies Used
+ ![image](https://github.com/user-attachments/assets/0ba6adee-a46e-4975-9365-4c3b0029e1ce)
