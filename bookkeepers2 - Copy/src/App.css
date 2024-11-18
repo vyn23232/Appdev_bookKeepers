@@ -1,0 +1,133 @@
+/* App.css */
+
+/* Fix the header at the top of the page */
+.app-header {
+    position: fixed; /* Fix the header to the top of the page */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensure it spans the full width */
+    z-index: 1000; /* Make sure it stays above other elements */
+    display: flex;
+    justify-content: space-between; /* Ensure logo and nav are spaced out */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f8c400;
+    background-image: url('/public/cit-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 1250px 0px;
+    color: #000000; /* Black text for contrast */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    font-family: 'Poppins', sans-serif;
+    max-width: 100%;
+}
+
+/* Make the background image clickable */
+.header-image-link {
+    position: absolute; /* Allow it to overlap the image */
+    top: 0;
+    right: 0; /* Adjust to align with the image position */
+    width: 200px; /* Match the width of the background image */
+    height: 60px; /* Match the height of the background image */
+    z-index: 1; /* Place it above the background image but below other content */
+    text-decoration: none; /* Remove link styling */
+    display: block; /* Ensure the link area is clickable */
+}
+
+.app-header h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.app-header h1 i {
+    margin-right: 0.5rem; /* Spacing between icon and text */
+    color: #ffc107; /* Highlighted icon color */
+    animation: bounce 2s infinite; /* Icon animation */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Navigation links styles */
+.nav-links {
+    display: flex;
+    gap: 2rem; /* More space between links */
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Push the navigation links to the right */
+    list-style: none;
+
+    position: relative;
+    z-index: 2; /* Keep the nav links clickable above the header-link */
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #ffffff;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px; /* Rounded links for a modern look */
+    transition: all 0.3s ease-in-out; /* Smooth hover transition */
+    position: relative; /* For hover underline animation */
+    overflow: hidden;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #800000; /* Underline color */
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links a:hover::before {
+    width: 100%; /* Full underline on hover */
+}
+
+.nav-links a:hover {
+    background-color: #800000; /* Subtle background on hover */
+    color: rgb(255, 255, 255); /* Gold text color on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Add padding to the body to avoid content overlap */
+body {
+    padding-top: 5rem; /* Adjust based on the header height */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .app-header {
+        flex-direction: column; /* Stack logo and nav on smaller screens */
+        align-items: flex-start; /* Align left on mobile */
+        padding: 1rem 1.5rem; /* Adjust padding for small screens */
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+        flex-direction: column; /* Stack links vertically */
+        gap: 1rem;
+        margin-left: 0; /* Reset left margin for mobile */
+    }
+
+    .nav-links a {
+        padding: 0.8rem 1.5rem; /* Adjust padding for smaller screens */
+    }
+}
