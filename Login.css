@@ -1,0 +1,31 @@
+/* src/components/Login.css */
+
+.login-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #744e09;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.create-account {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.create-account button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.create-account button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,57 @@
+/* src/components/Register.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9; /* Light background color */
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #333; /* Darker text for contrast */
+}
+
+form {
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Spacing within the form */
+    max-width: 400px; /* Max width for the form */
+    margin: 20px auto; /* Center the form */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside the input fields */
+    margin: 10px 0; /* Spacing between inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size for inputs */
+}
+
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for buttons */
+    width: 100%; /* Full width for buttons */
+    margin: 10px 0; /* Spacing between buttons */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+button[type="button"] {
+    background-color: #007bff; /* Blue background for back button */
+}
+
+button[type="button"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
