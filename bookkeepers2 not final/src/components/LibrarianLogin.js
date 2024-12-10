@@ -4,9 +4,9 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 
-function Login({ onLogin }) {
+function LibrarianLogin({ onLogin }) {
     const [formData, setFormData] = useState({
-        username: '', // For email
+        username: '',
         password: ''
     });
 
@@ -15,22 +15,22 @@ function Login({ onLogin }) {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8080/api/library/user/login', {
+            const response = await fetch('http://localhost:8080/api/librarians/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     username: formData.username,
-                    password: formData.password 
+                    password: formData.password
                 })
             });
 
             if (response.ok) {
-                const data = await response.text(); 
-                toast.success(data, { autoClose: 3000 });
-                onLogin(); // Update authentication state
-                navigate('/home');
+                const data = await response.text(); // Success message from backend
+                toast.success('Login Successful!', { autoClose: 3000 });
+                onLogin(); // Call parent function to update authentication state
+                navigate('/librarian/dashboard'); // Navigate to librarian's dashboard
             } else {
-                const errorText = await response.text(); 
+                const errorText = await response.text(); // Error message from backend
                 toast.error(errorText, { autoClose: 3000 });
             }
         } catch (error) {
@@ -42,14 +42,14 @@ function Login({ onLogin }) {
     return (
         <div className="login-wrapper">
             <div className="login-welcome">
-                <h1>Welcome Back!</h1>
-                <p>Your favorite library system is here to serve you.</p>
+                <h1>Welcome, Librarian!</h1>
+                <p>Manage the library system with ease.</p>
             </div>
             <div className="login-container">
-                <h1>LOGIN</h1>
+                <h1>LIBRARIAN LOGIN</h1>
                 <form onSubmit={handleLogin}>
                     <div className="form-group">
-                        <label htmlFor="username">Username (Email)</label>
+                        <label htmlFor="username">Username</label>
                         <input
                             type="text"
                             id="username"
@@ -69,14 +69,6 @@ function Login({ onLogin }) {
                         />
                     </div>
                     <button type="submit">Login</button>
-                    <p>
-                        Don't have an account?{' '}
-                        <button onClick={() => navigate('/register')}>Create Account</button>
-                    </p>
-                    <p>
-                        Are you a librarian?{' '}
-                        <button onClick={() => navigate('/librarian-login')}>Librarian Login</button>
-                    </p>
                 </form>
             </div>
             <ToastContainer />
@@ -84,4 +76,4 @@ function Login({ onLogin }) {
     );
 }
 
-export default Login;
+export default LibrarianLogin;

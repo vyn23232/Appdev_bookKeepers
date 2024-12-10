@@ -48,6 +48,7 @@ function App() {
                     <Route path="/landing" element={<LandingPage />} />
                     <Route path="/home" element={<Home isAuthenticated={isAuthenticated} />} />
                     <Route path="/login" element={<Login onLogin={handleLogin} />} />
+                    <Route path="/librarian-login" element={<LibrarianLogin onLogin={handleLogin} />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/manage-books" element={<Books refreshCount={refreshCount} />} />
                     <Route path="/book-list" element={<BookList refreshCount={refreshCount} />} />
