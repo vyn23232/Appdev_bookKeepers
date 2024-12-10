@@ -28,7 +28,7 @@ function LibrarianLogin({ onLogin }) {
                 const data = await response.text(); // Success message from backend
                 toast.success('Login Successful!', { autoClose: 3000 });
                 onLogin(); // Call parent function to update authentication state
-                navigate('/librarian/dashboard'); // Navigate to librarian's dashboard
+                navigate('/home'); // Navigate to librarian's dashboard
             } else {
                 const errorText = await response.text(); // Error message from backend
                 toast.error(errorText, { autoClose: 3000 });
