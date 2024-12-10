@@ -1,0 +1,131 @@
+/* Basic Container */
+.book-list-container {
+    width: 80rem;
+    height: 650px; /* Set fixed height */
+    overflow-y: auto; /* Allow vertical scrolling if content exceeds container height */
+    background: #f1f1f1; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    opacity: 0; /* Start with an opacity of 0 for fade effect */
+    animation: fadeIn 0.5s forwards; /* Use fadeIn animation */
+}
+
+/* Header */
+.book-list-heading {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 1.8rem; /* Reduced for a normal-sized header */
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #333;
+    letter-spacing: 0.5px;
+}
+
+/* Search Input */
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    font-family: 'Poppins', sans-serif;
+    width: 70%; /* Adjusted for a compact appearance */
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-input:focus {
+    font-family: 'Poppins', sans-serif;
+    border-color: #007bff;
+    box-shadow: 0 1px 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Cards Container */
+.book-cards-container {
+    font-family: 'Poppins', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* More compact card layout */
+    gap: 20px; /* Normal gap between cards */
+    margin-top: 20px;
+}
+
+/* Card Styling */
+.book-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Content */
+.card-content {
+    text-align: left;
+}
+
+.book-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.book-author,
+.book-category,
+.book-publisher,
+.book-publish-date {
+    font-size: 0.9rem; /* Smaller, consistent size */
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.book-author {
+    font-style: italic;
+    color: #444;
+}
+
+/* Card Footer */
+.card-footer {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.details-button {
+    font-family: 'Poppins', sans-serif;
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.details-button:hover {
+    background-color: #f8c400;
+}
+
+/* No Books Found */
+.no-books {
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+    margin-top: 20px;
+}

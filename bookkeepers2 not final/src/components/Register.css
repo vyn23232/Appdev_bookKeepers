@@ -1,0 +1,109 @@
+    .register-container {
+        background: #f1f1f1;
+        padding: 40px 60px;
+        border-radius: 15px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .register-wrapper {
+        border-radius: 20px;
+        width: 90rem;
+        display: flex;
+        height: 86vh;
+        background-color: #800000;
+        align-items: center;
+        justify-content: center;
+    }
+    .register-container h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .register-container form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .input-row {
+        display: flex;
+        gap: 20px;
+    }
+
+    .input-row input {
+        flex: 1;
+    }
+
+    .register-container input {
+        font-family: 'Poppins', sans-serif;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+
+    .register-container input:focus {
+        border-color: #800000;
+        outline: none;
+    }
+
+    .register-container button {
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        background: #800000;
+        color: #fff;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .register-container button:hover {
+        background: #f8c400;
+    }
+
+    .register-container button + button {
+        margin-top: 10px;
+        background: linear-gradient(90deg, #6c757d, #5a6268);
+    }
+
+    .register-container button + button:hover {
+        background: linear-gradient(90deg, #5a6268, #6c757d);
+    }
+
+    .password-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    
+    .password-container input {
+        flex: 1;
+        padding-right: 40px; /* Add space for the icon */
+    }
+    
+    .password-toggle-icon {
+        position: absolute;
+        right: 10px;
+        width: 24px; /* Fixed width to prevent layout shifts */
+        height: 24px; /* Fixed height for consistency */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem; /* Font size for the icon */
+        color: #800000;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    
+    .password-toggle-icon:hover {
+        color: #f8c400;
+    }
+    
