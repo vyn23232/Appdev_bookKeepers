@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 
 function Login({ onLogin }) {
@@ -24,16 +26,16 @@ function Login({ onLogin }) {
 
             if (response.ok) {
                 const data = await response.text(); 
-                alert(data);
+                toast.success(data, { autoClose: 3000 });
                 onLogin(); // Update authentication state
-                navigate('/home'); 
+                navigate('/home');
             } else {
                 const errorText = await response.text(); 
-                alert(errorText); 
+                toast.error(errorText, { autoClose: 3000 });
             }
         } catch (error) {
             console.error('Error:', error);
-            alert('An error occurred during login.');
+            toast.error('An error occurred during login.', { autoClose: 3000 });
         }
     };
 
@@ -73,6 +75,7 @@ function Login({ onLogin }) {
                     </p>
                 </form>
             </div>
+            <ToastContainer />
         </div>
     );
 }

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Register.css';
 
 function Register() {
@@ -13,7 +15,7 @@ function Register() {
         password: '',
     });
 
-    const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+    const [showPassword, setShowPassword] = useState(false);
 
     const navigate = useNavigate();
 
@@ -31,12 +33,13 @@ function Register() {
             });
 
             if (response.ok) {
-                alert('User registered successfully');
-                navigate('/login');
+                toast.success('User registered successfully!', { autoClose: 3000 });
+                setTimeout(() => navigate('/login'), 3100); // Redirect after toast
             } else {
-                alert('Failed to register user');
+                toast.error('Failed to register user. Please try again.', { autoClose: 3000 });
             }
         } catch (error) {
+            toast.error('An error occurred. Please try again later.', { autoClose: 3000 });
             console.error('Error:', error);
         }
     };
@@ -46,7 +49,7 @@ function Register() {
     };
 
     const togglePasswordVisibility = () => {
-        setShowPassword((prev) => !prev); // Toggle password visibility
+        setShowPassword((prev) => !prev);
     };
 
     return (
@@ -125,6 +128,7 @@ function Register() {
                 </form>
                 <button onClick={handleBackToLogin}>Back to Login</button>
             </div>
+            <ToastContainer />
         </div>
     );
 }

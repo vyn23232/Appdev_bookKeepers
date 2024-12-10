@@ -39,7 +39,6 @@ function App() {
                             <li><Link to="/manage-books">Manage Books</Link></li>
                             <li><Link to="/manage-categories">Manage Categories</Link></li>
                             {!isAuthenticated && <li><Link to="/login">Login</Link></li>}
-                            <li><Link to="/register">Register</Link></li>
                             {isAuthenticated && <li onClick={handleLogout}><Link to="/landing">Logout</Link></li>}
                         </ul>
                     </nav>
