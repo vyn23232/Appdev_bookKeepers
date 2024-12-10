@@ -14,17 +14,20 @@ import './App.css';
 function App() {
     const [refreshCount, setRefreshCount] = useState(0);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isLibrarian, setIsLibrarian] = useState(false); // New state for librarian
 
     const handleCategoryAdded = () => {
         setRefreshCount((count) => count + 1);
     };
 
-    const handleLogin = () => {
+    const handleLogin = (librarian = false) => {
         setIsAuthenticated(true);
+        setIsLibrarian(librarian); // Set whether the logged-in user is a librarian
     };
 
     const handleLogout = () => {
         setIsAuthenticated(false);
+        setIsLibrarian(false); // Reset librarian status on logout
     };
 
     return (
@@ -35,13 +38,23 @@ function App() {
                     <nav>
                         <ul className="nav-links">
                             <li><Link to="/home">Home</Link></li>
-                            {!isAuthenticated && <li><Link to="/login">Login</Link></li>}
+                            {!isAuthenticated && (
+                                <>
+                                    <li><Link to="/login">Login</Link></li>
+                                    <li><Link to="/librarian-login">Librarian Login</Link></li>
+                                </>
+                            )}
                             {isAuthenticated && (
                                 <>
                                     <li><Link to="/book-list">Book List</Link></li>
                                     <li><Link to="/category-list">Category List</Link></li>
-                                    <li><Link to="/manage-books">Manage Books</Link></li>
-                                    <li><Link to="/manage-categories">Manage Categories</Link></li>
+                                    {/* Show these links only for librarians */}
+                                    {isLibrarian && (
+                                        <>
+                                            <li><Link to="/manage-books">Manage Books</Link></li>
+                                            <li><Link to="/manage-categories">Manage Categories</Link></li>
+                                        </>
+                                    )}
                                     <li onClick={handleLogout}><Link to="/landing">Logout</Link></li>
                                 </>
                             )}
@@ -52,8 +65,8 @@ function App() {
                 <Routes>
                     <Route path="/landing" element={<LandingPage />} />
                     <Route path="/home" element={<Home isAuthenticated={isAuthenticated} />} />
-                    <Route path="/login" element={<Login onLogin={handleLogin} />} />
-                    <Route path="/librarian-login" element={<LibrarianLogin onLogin={handleLogin} />} />
+                    <Route path="/login" element={<Login onLogin={() => handleLogin(false)} />} /> {/* Not a librarian */}
+                    <Route path="/librarian-login" element={<LibrarianLogin onLogin={() => handleLogin(true)} />} /> {/* Librarian */}
                     <Route path="/register" element={<Register />} />
                     <Route path="/manage-books" element={<Books refreshCount={refreshCount} />} />
                     <Route path="/book-list" element={<BookList refreshCount={refreshCount} />} />
