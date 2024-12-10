@@ -53,4 +53,17 @@ public class LibrarianController {
         LibrarianEntity librarian = librarianService.getLibrarianByUsername(username);
         return librarian != null ? ResponseEntity.ok(librarian) : ResponseEntity.notFound().build();
     }
+
+    // ADD THE LOGIN ENDPOINT
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody LibrarianEntity loginRequest) {
+        LibrarianEntity librarian = librarianService.getLibrarianByUsername(loginRequest.getUsername());
+
+        // Check if the librarian exists and the password matches
+        if (librarian != null && librarian.getPassword().equals(loginRequest.getPassword())) {
+            return ResponseEntity.ok("Librarian login successful!");
+        } else {
+            return ResponseEntity.status(401).body("Invalid username or password.");
+        }
+    }
 }
