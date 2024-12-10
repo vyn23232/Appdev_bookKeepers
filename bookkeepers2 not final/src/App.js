@@ -8,6 +8,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Register from './components/Register';
 import LandingPage from './components/LandingPage'; // Import the Landing Page component
+import LibrarianLogin from './components/LibrarianLogin';
 import './App.css';
 
 function App() {
@@ -34,12 +35,16 @@ function App() {
                     <nav>
                         <ul className="nav-links">
                             <li><Link to="/home">Home</Link></li>
-                            <li><Link to="/book-list">Book List</Link></li> {/* Link to BookList component */}
-                            <li><Link to="/category-list">Category List</Link></li> {/* Link to CategoryList component */}
-                            <li><Link to="/manage-books">Manage Books</Link></li>
-                            <li><Link to="/manage-categories">Manage Categories</Link></li>
                             {!isAuthenticated && <li><Link to="/login">Login</Link></li>}
-                            {isAuthenticated && <li onClick={handleLogout}><Link to="/landing">Logout</Link></li>}
+                            {isAuthenticated && (
+                                <>
+                                    <li><Link to="/book-list">Book List</Link></li>
+                                    <li><Link to="/category-list">Category List</Link></li>
+                                    <li><Link to="/manage-books">Manage Books</Link></li>
+                                    <li><Link to="/manage-categories">Manage Categories</Link></li>
+                                    <li onClick={handleLogout}><Link to="/landing">Logout</Link></li>
+                                </>
+                            )}
                         </ul>
                     </nav>
                 </header>
@@ -53,7 +58,7 @@ function App() {
                     <Route path="/manage-books" element={<Books refreshCount={refreshCount} />} />
                     <Route path="/book-list" element={<BookList refreshCount={refreshCount} />} />
                     <Route path="/manage-categories" element={<Categories onCategoryAdded={handleCategoryAdded} />} />
-                    <Route path="/category-list" element={<CategoryList refresh={refreshCount} />} /> {/* Add the route for CategoryList */}
+                    <Route path="/category-list" element={<CategoryList refresh={refreshCount} />} />
                     <Route path="/" element={<LandingPage />} />
                 </Routes>
             </div>

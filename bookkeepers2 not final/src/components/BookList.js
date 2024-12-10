@@ -81,7 +81,7 @@ const BookList = ({ refreshCount }) => {
                                 <p><strong>Published:</strong> {book.publish_date}</p>
                             </div>
                             <div className="card-footer">
-                                <button className="details-button">View Details</button>
+                                <button className="details-button">Borrow</button>
                             </div>
                         </div>
                     ))
