@@ -58,9 +58,9 @@
 /* Navigation links styles */
 .nav-links {
     display: flex;
-    gap: 1rem; /* More space between links */
+    gap: 0.5rem; /* More space between links */
     margin: 0;
-    padding-left: 940px;
+    padding-left: 595px;
     margin-left: auto; /* Push the navigation links to the right */
     list-style: none;
     position: relative;

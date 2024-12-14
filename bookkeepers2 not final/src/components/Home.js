@@ -61,7 +61,6 @@ const Home = ({ isAuthenticated }) => {
             <div className="cta">
                 <h2>Stay Updated</h2>
                 <p>Subscribe to our newsletter for the latest updates and tips on managing your library.</p>
-                <button className="home-btn">Subscribe Now</button>
             </div>
 
             <footer>
