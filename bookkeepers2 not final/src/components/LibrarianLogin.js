@@ -10,8 +10,15 @@ function LibrarianLogin({ onLogin }) {
         password: ''
     });
 
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
+    const togglePasswordVisibility = () => {
+        setShowPassword((prev) => !prev);
+    };
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
@@ -39,6 +46,10 @@ function LibrarianLogin({ onLogin }) {
         }
     };
 
+    const handleBackToLogin = () => {
+        navigate('/login');
+    };
+
     return (
         <div className="login-wrapper">
             <div className="login-welcome">
@@ -58,18 +69,23 @@ function LibrarianLogin({ onLogin }) {
                             required
                         />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
+                    <div className="password-container">
                         <input
-                            type="password"
-                            id="password"
+                            type={showPassword ? "text" : "password"}
+                            name="password"
+                            placeholder="Password"
                             value={formData.password}
-                            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                            onChange={handleChange}
                             required
                         />
+                        <i
+                            className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"} password-toggle-icon`}
+                            onClick={togglePasswordVisibility}
+                        ></i>
                     </div>
                     <button type="submit">Login</button>
                 </form>
+                <button onClick={handleBackToLogin}>Back to Login</button>
             </div>
             <ToastContainer />
         </div>

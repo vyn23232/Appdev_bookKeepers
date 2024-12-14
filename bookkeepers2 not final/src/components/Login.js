@@ -9,8 +9,15 @@ function Login({ onLogin }) {
         username: '', // For email
         password: ''
     });
-
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+
+    const togglePasswordVisibility = () => {
+        setShowPassword((prev) => !prev);
+    };
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -58,15 +65,18 @@ function Login({ onLogin }) {
                             required
                         />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
+                    <div className="password-container">
                         <input
-                            type="password"
-                            id="password"
+                            type={showPassword ? "text" : "password"}
+                            name="password"
+                            placeholder="Password"
                             value={formData.password}
-                            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                            onChange={handleChange}
                             required
                         />
+                        <i className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"} password-toggle-icon`}
+                            onClick={togglePasswordVisibility}
+                        ></i>
                     </div>
                     <button type="submit">Login</button>
                     <p>

@@ -14,8 +14,9 @@ public class Book {
     private String author;
     private String publisher;
     private String publish_date;
+    private boolean isAvailable;  // New field
 
-    
+    // Getters and setters for the existing fields
     public Long getBook_ID() {
         return book_ID;
     }
@@ -62,5 +63,14 @@ public class Book {
 
     public void setPublish_date(String publish_date) {
         this.publish_date = publish_date;
+    }
+
+    // Getters and setters for isAvailable
+    public boolean isAvailable() {
+        return isAvailable;
+    }
+
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
 }
