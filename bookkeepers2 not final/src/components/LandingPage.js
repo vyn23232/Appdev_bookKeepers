@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
+import Sitting from '../assets/images/Sitting.png'; // Import the image
 
 const LandingPage = () => {
     return (
@@ -12,7 +13,7 @@ const LandingPage = () => {
                     <Link to="/home" className="landing-btn">Join Now</Link>
                 </div>
                 <div className="header-image">
-                    <img src="C:/Users/Jhovynn Apurado/Desktop/Sitting.png" alt="Illustration of a person reading" />
+                    <img src={Sitting} alt="Illustration of a person reading" />
                 </div>
             </header>
         </div>
