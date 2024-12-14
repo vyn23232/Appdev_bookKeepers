@@ -69,7 +69,7 @@ function LibrarianLogin({ onLogin }) {
                             required
                         />
                     </div>
-                    <div className="password-container">
+                    <div className="passwords-container">
                         <input
                             type={showPassword ? "text" : "password"}
                             name="password"

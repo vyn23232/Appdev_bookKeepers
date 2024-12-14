@@ -65,7 +65,7 @@ function Login({ onLogin }) {
                             required
                         />
                     </div>
-                    <div className="password-container">
+                    <div className="passwords-container">
                         <input
                             type={showPassword ? "text" : "password"}
                             name="password"
@@ -74,7 +74,8 @@ function Login({ onLogin }) {
                             onChange={handleChange}
                             required
                         />
-                        <i className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"} password-toggle-icon`}
+                        <i
+                            className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"} password-toggle-icon`}
                             onClick={togglePasswordVisibility}
                         ></i>
                     </div>

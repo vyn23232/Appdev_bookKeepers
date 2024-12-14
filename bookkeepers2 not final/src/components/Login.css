@@ -1,6 +1,3 @@
-
-
-
 .login-container::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Opera */
 }
@@ -68,6 +65,7 @@
 }
 
 .login-container .form-group label {
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
@@ -84,7 +82,7 @@
 
 .login-container button {
     font-family: 'Poppins', sans-serif;
-    width: 100%;
+    width: 105%;
     padding: 12px;
     border: none;
     border-radius: 5px;
@@ -114,23 +112,25 @@
     text-decoration: underline;
 }
 
-.password-container {
+.passwords-container {
+    position: relative;
     font-family: 'Poppins', sans-serif;
     width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-.password-container input {
+.passwords-container input {
     font-family: 'Poppins', sans-serif;
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
 }

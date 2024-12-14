@@ -1,63 +1,79 @@
+/* Overall container */
 .landing-container {
+    width: 90rem;
     font-family: 'Poppins', sans-serif;
-    background-color: #333;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+    background-color: #800000;
 }
 
+/* Header Section */
 .landing-header {
-    margin: 50px 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.header-content {
+    max-width: 500px;
+    text-align: left;
 }
 
 .landing-header h1 {
+    font-family: 'Poppins', sans-serif; 
     font-size: 48px;
+    color: #ff9e2f;
     margin-bottom: 20px;
 }
 
 .landing-header p {
-    font-size: 24px;
-    margin-bottom: 40px;
+    font-size: 18px;
+    color: #ff9e2f;
+    margin-bottom: 30px;
 }
 
 .landing-btn {
     display: inline-block;
-    padding: 15px 30px;
-    background-color: #007bff;
-    color: #fff;
+    padding: 12px 25px;
+    background-color: #ff9e2f;
+    color: white;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
 .landing-btn:hover {
-    background-color: #0056b3;
+    background-color: #ff7a00;
 }
 
-.features-section,
-.testimonials-section {
-    margin: 50px 0;
+/* Image Section */
+.header-image img {
+    width: 500px;
+    height: auto;
+    object-fit: cover;
 }
 
-.features-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .landing-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.feature-item,
-.testimonial-item {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    max-width: 300px;
-}
+    .header-image img {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 20px;
+    }
 
-.landing-footer {
-    margin-top: 50px;
-    font-size: 14px;
+    .header-content {
+        max-width: 100%;
+    }
 }
