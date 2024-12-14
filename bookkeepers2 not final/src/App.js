@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import LandingPage from './components/LandingPage'; // Import the Landing Page component
 import LibrarianLogin from './components/LibrarianLogin';
+import AboutUs from './components/AboutUs';
 import './App.css';
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
                     <nav>
                         <ul className="nav-links">
                             <li><Link to="/home">Home</Link></li>
+                            <li><Link to="/about-us">About Us</Link></li>
                             {!isAuthenticated && (
                                 <>
                                     <li><Link to="/login">Login</Link></li>
@@ -63,6 +65,7 @@ function App() {
                 </header>
 
                 <Routes>
+                    <Route path="/about-us" element={<AboutUs />} /> {/* Add the About Us route */}
                     <Route path="/landing" element={<LandingPage />} />
                     <Route path="/home" element={<Home isAuthenticated={isAuthenticated} />} />
                     <Route path="/login" element={<Login onLogin={() => handleLogin(false)} />} /> {/* Not a librarian */}

@@ -1,0 +1,103 @@
+/* Wrapper for the About Us page */
+.about-us-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #800000;
+    border-radius: 20px;
+    height: 700px;
+    padding: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* The container that holds the content of the About Us page */
+.about-us-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 900px;
+    text-align: center;
+    opacity: 0;
+    animation: slideUp 1.5s forwards ease-out;
+}
+
+/* Heading styles */
+.about-us-container h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #800000;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-in-out forwards 0.5s;
+}
+
+/* Subheading styles */
+.about-us-container h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #800000;
+    font-size: 2rem;
+    margin-top: 20px;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-in-out forwards 1s;
+}
+
+/* Paragraph styles */
+.about-us-container p {
+    font-family: 'Poppins', sans-serif;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-in-out forwards 1.5s;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional responsiveness */
+@media (max-width: 768px) {
+    .about-us-container {
+        width: 95%;
+        padding: 20px;
+    }
+    .about-us-container h1 {
+        font-size: 2rem;
+    }
+    .about-us-container h2 {
+        font-size: 1.8rem;
+    }
+    .about-us-container p {
+        font-size: 1rem;
+    }
+}
