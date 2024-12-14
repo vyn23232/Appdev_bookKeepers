@@ -60,7 +60,7 @@
     display: flex;
     gap: 1rem; /* More space between links */
     margin: 0;
-    padding-left: 1000px;
+    padding-left: 940px;
     margin-left: auto; /* Push the navigation links to the right */
     list-style: none;
     position: relative;

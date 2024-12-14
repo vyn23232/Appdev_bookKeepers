@@ -13,12 +13,16 @@ const Books = ({ refreshCount }) => {
         publish_date: '',
         category: '',
     });
+    const [modalState, setModalState] = useState({
+        isVisible: false,
+        action: null,
+        book: null,
+    });
 
     useEffect(() => {
         fetchBooks();
     }, []);
 
-    // Fetch categories when refreshCount changes or on initial load
     useEffect(() => {
         fetchCategories();
     }, [refreshCount]);
@@ -66,25 +70,27 @@ const Books = ({ refreshCount }) => {
         }
     };
 
-    const handleDeleteWithConfirmation = async (id) => {
-        const isConfirmed = window.confirm('Are you sure you want to delete this record?');
-    
-        if (isConfirmed) {
-            try {
-                await fetch(`${apiUrl}/books/${id}`, { method: 'DELETE' });
-                fetchBooks();
-            } catch (error) {
-                console.error('Error deleting book:', error);
-            }
+    const showModal = (action, book = null) => {
+        setModalState({ isVisible: true, action, book });
+    };
+
+    const hideModal = () => {
+        setModalState({ isVisible: false, action: null, book: null });
+    };
+
+    const handleDelete = async (id) => {
+        try {
+            await fetch(`${apiUrl}/books/${id}`, { method: 'DELETE' });
+            fetchBooks();
+            hideModal();
+        } catch (error) {
+            console.error('Error deleting book:', error);
         }
     };
 
-    const handleUpdateWithConfirmation = (book) => {
-        const isConfirmed = window.confirm('Are you sure you want to update this record?');
-    
-        if (isConfirmed) {
-            setFormData(book); // Set the form data with the book's data for updating
-        }
+    const handleUpdate = (book) => {
+        setFormData(book);
+        hideModal();
     };
 
     return (
@@ -129,13 +135,13 @@ const Books = ({ refreshCount }) => {
                             <td>
                                 <button 
                                     className="action-button update-button" 
-                                    onClick={() => handleUpdateWithConfirmation(book)}
+                                    onClick={() => showModal('update', book)}
                                 >
                                     <i className="fas fa-edit"></i> Update
                                 </button>
                                 <button 
                                     className="action-button delete-button" 
-                                    onClick={() => handleDeleteWithConfirmation(book.book_ID)}
+                                    onClick={() => showModal('delete', book)}
                                 >
                                     <i className="fas fa-trash"></i> Delete
                                 </button>
@@ -144,6 +150,32 @@ const Books = ({ refreshCount }) => {
                     ))}
                 </tbody>
             </table>
+
+            {modalState.isVisible && (
+                <div className="modal-overlay">
+                    <div className="modal">
+                        <h3>Confirm Action</h3>
+                        <p>
+                            {modalState.action === 'delete' 
+                                ? `Are you sure you want to delete the book "${modalState.book.title}"?`
+                                : `Are you sure you want to update the book "${modalState.book.title}"?`}
+                        </p>
+                        <div className="modal-actions">
+                            <button 
+                                className="confirm-button"
+                                onClick={() => 
+                                    modalState.action === 'delete'
+                                        ? handleDelete(modalState.book.book_ID)
+                                        : handleUpdate(modalState.book)
+                                }
+                            >
+                                Confirm
+                            </button>
+                            <button className="cancel-button" onClick={hideModal}>Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

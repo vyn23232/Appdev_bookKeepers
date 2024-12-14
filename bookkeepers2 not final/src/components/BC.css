@@ -158,3 +158,29 @@ tr:hover {
 .action-button.delete-button:hover {
     color: red; /* Red text on hover specifically for delete button */
 }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.modal-actions button {
+    margin: 5px;
+}
+
+.confirm-button {
+    background-color: #9bce25;
+}
